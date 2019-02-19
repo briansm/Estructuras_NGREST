@@ -1,6 +1,6 @@
-/*#include "cola.h"
+#include "cola.h"
 
-cola::colacircular()
+cola::cola()
 {
     primeroC = NULL;
     ultimoC = NULL;
@@ -8,7 +8,7 @@ cola::colacircular()
 
 void cola::insertar_nodo_recurso(datos_recurso recurso_aux)
 {
-    nodo* tempC=new nodo();//creamos el nodo, para manipular los nodos
+    nodoC* tempC=new nodoC();//creamos el nodo, para manipular los nodos
     tempC->recurso_nuevo=recurso_aux;//le asignamos, al puntero temporal, el valor del parametro
     if(primeroC==NULL){// si el primer nodo esta vacío
         primeroC=tempC;
@@ -23,4 +23,3 @@ void cola::insertar_nodo_recurso(datos_recurso recurso_aux)
     }
 
 }
-*/

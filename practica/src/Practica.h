@@ -6,7 +6,7 @@
 
 #include <ngrest/common/Service.h>
 #include <listacircular.h>
-//#include <cola.h>
+#include <cola.h>
 #include <list>
 
 struct usuarioN
@@ -17,7 +17,15 @@ struct usuarioN
     std::string fecha;
 };
 
+struct recursoN
+{
+    std::string dominio;
+    std::string contenido;
+    
+};
+
 typedef usuarioN datos_usuario_serial;
+typedef recursoN datos_recurso_serial;
 
 //! Dummy description for the service
 /*! Some detailed description of the service */
@@ -55,6 +63,22 @@ public:
     // *method: GET
 
     std::list<datos_usuario_serial> getuser();
+
+    // *location: /newrecurso
+    //! Insertar Recurso
+    /*! Permite ingresar un usuario  */
+    // *method: POST
+    
+
+    std::string newrecurso(datos_recurso_serial recu);
+    
+
+    // *location: /getrecurso
+    //! Obtener recurso
+    /*! Despliega los recursos  */
+    // *method: GET
+
+    std::list<datos_recurso_serial> getrecurso();
 };
 
 

@@ -3,6 +3,7 @@
 
 #include "Practica.h"
 listacircular lusuario;
+cola lrecurso;
 
 std::string Practica::echo(const std::string& text)
 {
@@ -41,6 +42,43 @@ std::list<datos_usuario_serial> Practica::getuser()
             actual=actual->siguiente;
         }
         while(actual!=lusuario.primero);
+        
+    }
+    else
+    {
+        std::cout<<"La lista se encuentra vacia";
+    }
+    return response;
+}
+
+std::string Practica::newrecurso(datos_recurso_serial recu)
+{
+    std::string response="Ingreso EXITOSO";
+    datos_recurso manejo_recurso;
+    manejo_recurso.dominio=recu.dominio;
+    manejo_recurso.contenido=recu.contenido;
+    lrecurso.insertar_nodo_recurso(manejo_recurso);
+    return response;
+}
+
+
+std::list<datos_recurso_serial> Practica::getrecurso()
+{
+    list<datos_recurso_serial> response;
+    
+    nodoC* actual=new nodoC();
+
+    actual=lrecurso.primeroC;
+    if(actual!=NULL)
+    {
+        do{
+            datos_recurso_serial temp;
+            temp.dominio=actual->recurso_nuevo.dominio;
+            temp.contenido=actual->recurso_nuevo.contenido;
+            response.push_back(temp);
+            actual=actual->siguienteC;
+        }
+        while(actual!=lrecurso.primeroC);
         
     }
     else

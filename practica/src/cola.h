@@ -1,4 +1,4 @@
-/*#ifndef COLA_H
+#ifndef COLA_H
 #define COLA_H
 #include <iostream>
 
@@ -13,18 +13,18 @@ struct recurso
 
 typedef recurso datos_recurso;
 
-struct nodo
+struct nodoC
 {
     datos_recurso recurso_nuevo;
-    nodo* siguienteC;
+    nodoC* siguienteC;
 
 };
 
 class cola
 {
     public:
-        colacircular();
-        nodo *primeroC,*ultimoC;
+        cola();
+        nodoC *primeroC,*ultimoC;
         void insertar_nodo_recurso(datos_recurso recurso_nuevo);
         void desplegar_recurso();
         
@@ -35,4 +35,3 @@ class cola
 };
 
 #endif // COLA_H
-*/
