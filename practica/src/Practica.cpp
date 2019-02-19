@@ -2,8 +2,10 @@
 // For more information, please visit: https://github.com/loentar/ngrest
 
 #include "Practica.h"
+
 listacircular lusuario;
 cola lrecurso;
+
 
 std::string Practica::echo(const std::string& text)
 {
@@ -13,6 +15,7 @@ std::string Practica::echo(const std::string& text)
 
 std::string Practica::newuser(datos_usuario_serial user)
 {
+    
     std::string response="Ingreso EXITOSO";
     datos_usuario manejo_usuario;
     manejo_usuario.id=user.id;
